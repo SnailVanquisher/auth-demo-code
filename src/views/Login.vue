@@ -10,7 +10,6 @@
 
 <script>
 
-import firebase from 'firebase'
   export default {
     name: 'login',
     data: function() {
@@ -18,22 +17,9 @@ import firebase from 'firebase'
         email: '',
         password: ''
       }
-    },
-    methods: {
-
-      login: function() {
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            this.$router.replace('hello')
-          },
-          (err) => {
-            alert(err.message)
-          }
-        )
-      }
     }
   }
 </script>
 
-<style scoped>
+<style scoped> /* scoped just means it will limit CSS to this component*/
 </style>

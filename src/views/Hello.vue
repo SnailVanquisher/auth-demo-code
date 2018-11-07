@@ -13,16 +13,12 @@ import firebase from 'firebase';
 // import HelloWorld from '@/components/HelloWorld.vue'
 export default {
   name: 'hello',
-  components: {},
-  methods: {
-    logout: function() {
-      firebase.auth().signOut().then(()=> {
-      this.$router.replace('/')
-    })
-  }
-}
+  components: {}
 }
 </script>
 
 <style scoped>
+#cat-logo {
+  max-width: 300px;
+}
 </style>

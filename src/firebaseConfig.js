@@ -1,5 +1,4 @@
 import firebase from "firebase/app";
-import 'firebase/auth'
 
 // https://cli.vuejs.org/guide/mode-and-env.html
 const config = {
@@ -10,8 +9,6 @@ const config = {
   storageBucket: process.env.VUE_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.VUE_APP_MSG_SENDER_ID
 };
-
-const provider = new firebase.auth.GoogleAuthProvider()
 firebase.initializeApp(config);
 
-export {provider};
+export {};

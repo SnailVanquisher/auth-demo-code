@@ -5,13 +5,10 @@
     <input type="password" v-model="password" placeholder="password"><br>
     <button v-on:click='signUp'>Sign Up</button>
     <p>or go back to <router-link to="/login">login</router-link></p>
-    <button v-on:click='googleSignIn'>Sign in with Google</button>
   </div>
 </template>
 
 <script>
-import firebase from 'firebase'
-import {provider} from '../firebaseConfig'
   export default {
     name: 'signUp',
     data: function() {
@@ -19,29 +16,9 @@ import {provider} from '../firebaseConfig'
         email: '',
         password: ''
       }
-    },
-    methods: {
-      signUp: function() {
-        firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            this.$router.replace('hello')
-          },
-          (err) => {
-            alert(err.message)
-          }
-        )
-      },
-      googleSignIn: function() {
-        firebase.auth().signInWithRedirect(provider).then(
-          (result=> {
-            console.log("signed in with google")
-          })
-          .catch(err=>alert(err.message))
-        )
-      }
     }
   }
 </script>
 
-<style scoped>
+<style scoped> /* scoped just means it will limit CSS to this component*/
 </style>
